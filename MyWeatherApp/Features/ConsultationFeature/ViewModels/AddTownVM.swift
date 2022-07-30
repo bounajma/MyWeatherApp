@@ -55,4 +55,19 @@ class AddTownVM {
         }
     }
     
+    func getWether() {
+        guard let geocode = self.town, let lat = geocode.lat, let lon = geocode.lon else {
+            return
+        }
+        self.addService.getTownWeather(lat: lat, lon: lon) { result in
+            switch result {
+            case .success(let value):
+                print("weather is \(value.current?.temp)")
+                break
+            case .failure(_):
+                break
+            }
+        }
+    }
+    
 }

@@ -18,4 +18,13 @@ class AddTownService {
         }
     }
     
+    func getTownWeather(lat: Double,lon: Double, completion: @escaping (Result<WeatherResponse, RequestError>) -> ()) {
+        let weatherEndpoint = WeatherEndpoint(lat: lat, lon: lon)
+        WeatherAPIManager.sendRequest(endpoint: weatherEndpoint, responseModel: WeatherResponse.self) { response in
+            
+            completion(response)
+            
+        }
+    }
+    
 }

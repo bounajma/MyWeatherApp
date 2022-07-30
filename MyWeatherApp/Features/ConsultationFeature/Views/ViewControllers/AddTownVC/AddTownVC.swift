@@ -43,6 +43,7 @@ class AddTownVC: UIViewController {
         self.dismiss(animated: true)
     }
     @IBAction func addTown(_ sender: UIButton) {
+        self.viewModel?.getWether()
     }
     
     @objc func textChanged(_ textField: UITextField) {
