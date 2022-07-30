@@ -26,14 +26,27 @@ class AppCoordinator {
     }
     
     func startConsultation () {
+        
         let vc = TownsListVC()
         let vm = TownsListVM()
         let service = TownsListService()
         vm.townsService = service
         vc.viewModel = vm
-        self.consultation.townsVC = vc
-        self.consultation.townsVM = vm
         self.consultation.townsService = service
+        self.consultation.townsVM = vm
+        self.consultation.townsVC = vc
+        
+        
+        let addVC = AddTownVC()
+        let addVM = AddTownVM()
+        let addService = AddTownService()
+        addVM.addService = addService
+        addVC.viewModel = addVM
+        
+        self.consultation.addTownService = addService
+        self.consultation.addTownVM = addVM
+        self.consultation.addTownVC = addVC
+        
         self.consultation.start()
     }
     

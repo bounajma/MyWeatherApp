@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class ConsultationCoordinator: Coordinator {
+class ConsultationCoordinator: NSObject, Coordinator {
     
     var navController: UINavigationController = UINavigationController()
     
@@ -18,13 +18,33 @@ class ConsultationCoordinator: Coordinator {
     var townsVM: TownsListVM?
     var townsService: TownsListService?
     
+    //MARK: Add town views
+    var addTownVC: AddTownVC?
+    var addTownVM: AddTownVM?
+    var addTownService: AddTownService?
+    
     func start() {
         self.navController.navigationBar.prefersLargeTitles = true
         self.navController.navigationItem.largeTitleDisplayMode = .automatic
         self.navController.navigationBar.sizeToFit()
         self.navController.navigationBar.isTranslucent = false
+        self.townsVC?.delegate = self
         self.navController = UINavigationController(rootViewController: self.townsVC ?? UIViewController())
     }
+    func showAddVC() {
+        if let add = self.addTownVC {
+            self.navController.present(add, animated: true)
+        }
+    }
     
+}
+
+// TownsListVCDelegate
+
+extension ConsultationCoordinator: TownsListVCDelegate {
+    
+    func addTown() {
+        showAddVC()
+    }
 }
 

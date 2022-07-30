@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol TownsListVCDelegate: NSObjectProtocol {
+    func addTown()
+}
+
 class TownsListVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    weak var delegate: TownsListVCDelegate?
     var viewModel: TownsListVM?
     
     var viewData = [TownViewData]() {
@@ -28,10 +33,13 @@ class TownsListVC: UIViewController {
     
     func setupViews() {
         self.navigationItem.title = "Liste des villes"
-        //self.tableView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 30, right: 0)
+        let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
+        self.navigationItem.rightBarButtonItem = addBarButton
+        self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
         self.tableView.register(UINib(nibName: TownsListCell.cellIdentifier , bundle: Bundle(for: TownsListCell.self)), forCellReuseIdentifier: TownsListCell.cellIdentifier)
         
     }
+    
     func updateViews() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -39,10 +47,14 @@ class TownsListVC: UIViewController {
     }
     func getData() {
         self.startActivityIndicator()
-        self.viewModel?.bindTownsList = { list in
-            self.viewData = list
+        self.viewModel?.bindTownsList = { [weak self] list in
+            self?.viewData = list
         }
         self.viewModel?.getTownsList()
+    }
+    
+    @objc func plusButtonTapped() {
+        self.delegate?.addTown()
     }
 }
 

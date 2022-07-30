@@ -27,6 +27,10 @@
 		86D4387A2895D416003F74A0 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D438792895D416003F74A0 /* AppCoordinator.swift */; };
 		86D4387D2895D47E003F74A0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D4387C2895D47E003F74A0 /* Coordinator.swift */; };
 		86D4387F2895D77C003F74A0 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D4387E2895D77C003F74A0 /* DIContainer.swift */; };
+		86D438832895E01D003F74A0 /* AddTownVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D438812895E01D003F74A0 /* AddTownVC.swift */; };
+		86D438842895E01D003F74A0 /* AddTownVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D438822895E01D003F74A0 /* AddTownVC.xib */; };
+		86D438882895E2C3003F74A0 /* AddTownVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D438872895E2C3003F74A0 /* AddTownVM.swift */; };
+		86D4388A2895E2D7003F74A0 /* AddTownService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D438892895E2D7003F74A0 /* AddTownService.swift */; };
 		DD52F797503A7B5DA34FDAFB /* Pods_MyWeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34EABD5387DC66F61368E8BD /* Pods_MyWeatherApp.framework */; };
 		E052EB5A4EDC7D2677B967A5 /* Pods_MyWeatherApp_MyWeatherAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAADA47501518C8C8F3B6D11 /* Pods_MyWeatherApp_MyWeatherAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +81,10 @@
 		86D438792895D416003F74A0 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		86D4387C2895D47E003F74A0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		86D4387E2895D77C003F74A0 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		86D438812895E01D003F74A0 /* AddTownVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTownVC.swift; sourceTree = "<group>"; };
+		86D438822895E01D003F74A0 /* AddTownVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTownVC.xib; sourceTree = "<group>"; };
+		86D438872895E2C3003F74A0 /* AddTownVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTownVM.swift; sourceTree = "<group>"; };
+		86D438892895E2D7003F74A0 /* AddTownService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTownService.swift; sourceTree = "<group>"; };
 		96492E7C42F51F0E4D0513CA /* Pods-MyWeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MyWeatherAppTests/Pods-MyWeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A04718FFEA8D0F851B6C079C /* Pods-MyWeatherAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWeatherAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyWeatherAppTests/Pods-MyWeatherAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		BAADA47501518C8C8F3B6D11 /* Pods_MyWeatherApp_MyWeatherAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyWeatherApp_MyWeatherAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				86D4385C2895BCBF003F74A0 /* TownsListVM.swift */,
+				86D438872895E2C3003F74A0 /* AddTownVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -265,24 +274,26 @@
 		86D438672895BCBF003F74A0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				86D438682895BCBF003F74A0 /* TownsList */,
+				86D438802895DFBA003F74A0 /* AddTownVC */,
+				86D438682895BCBF003F74A0 /* TownsListVC */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		86D438682895BCBF003F74A0 /* TownsList */ = {
+		86D438682895BCBF003F74A0 /* TownsListVC */ = {
 			isa = PBXGroup;
 			children = (
 				86D438692895BCBF003F74A0 /* TownsListVC.swift */,
 				86D4386A2895BCBF003F74A0 /* TownsListVC.xib */,
 			);
-			path = TownsList;
+			path = TownsListVC;
 			sourceTree = "<group>";
 		};
 		86D438732895C402003F74A0 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				86D438742895C416003F74A0 /* TownsListService.swift */,
+				86D438892895E2D7003F74A0 /* AddTownService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -302,6 +313,15 @@
 				86D4387E2895D77C003F74A0 /* DIContainer.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		86D438802895DFBA003F74A0 /* AddTownVC */ = {
+			isa = PBXGroup;
+			children = (
+				86D438812895E01D003F74A0 /* AddTownVC.swift */,
+				86D438822895E01D003F74A0 /* AddTownVC.xib */,
+			);
+			path = AddTownVC;
 			sourceTree = "<group>";
 		};
 		9AB83C0E2CF8649D988A422D /* Pods */ = {
@@ -427,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D438722895BCBF003F74A0 /* TownsListVC.xib in Resources */,
+				86D438842895E01D003F74A0 /* AddTownVC.xib in Resources */,
 				86D4386F2895BCBF003F74A0 /* TownsListCell.xib in Resources */,
 				86D4383428959867003F74A0 /* LaunchScreen.storyboard in Resources */,
 				86D4383128959867003F74A0 /* Assets.xcassets in Resources */,
@@ -557,9 +578,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86D438882895E2C3003F74A0 /* AddTownVM.swift in Sources */,
 				86D4386C2895BCBF003F74A0 /* ConsultationCoordinator.swift in Sources */,
 				86D438752895C416003F74A0 /* TownsListService.swift in Sources */,
+				86D438832895E01D003F74A0 /* AddTownVC.swift in Sources */,
 				86D4387A2895D416003F74A0 /* AppCoordinator.swift in Sources */,
+				86D4388A2895E2D7003F74A0 /* AddTownService.swift in Sources */,
 				86D4386B2895BCBF003F74A0 /* TownsListVM.swift in Sources */,
 				86D4387F2895D77C003F74A0 /* DIContainer.swift in Sources */,
 				86D4386D2895BCBF003F74A0 /* TownViewData.swift in Sources */,
