@@ -1,0 +1,21 @@
+PODS:
+  - MBWeather (0.5.0)
+
+DEPENDENCIES:
+  - "MBWeather (from `git@github.com:bounajma/MBWeather.git`)"
+
+EXTERNAL SOURCES:
+  MBWeather:
+    :git: "git@github.com:bounajma/MBWeather.git"
+
+CHECKOUT OPTIONS:
+  MBWeather:
+    :commit: fb9c6f492337221565bca7b1e5262656c0daa7aa
+    :git: "git@github.com:bounajma/MBWeather.git"
+
+SPEC CHECKSUMS:
+  MBWeather: af81d3f331810c0b0278c9449aeb2446069f65f8
+
+PODFILE CHECKSUM: 1235be87133a3614a8fc0555c5a7ba148e30d171
+
+COCOAPODS: 1.11.3
