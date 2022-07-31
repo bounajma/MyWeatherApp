@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AddTownVCDelegate: NSObjectProtocol {
-    
+    func updateTownsList()
 }
 
 class AddTownVC: UIViewController {
@@ -20,6 +20,7 @@ class AddTownVC: UIViewController {
     
     
     var viewModel: AddTownVM?
+    weak var delegate: AddTownVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,10 @@ class AddTownVC: UIViewController {
         }
         self.viewModel?.bindResultMessage = { [weak self] text in
             self?.resultLabel.text = text
+        }
+        self.viewModel?.notifyAdd = {
+            self.delegate?.updateTownsList()
+            self.dismiss(animated: true)
         }
     }
     

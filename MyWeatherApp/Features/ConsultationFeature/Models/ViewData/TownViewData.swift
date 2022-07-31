@@ -16,8 +16,8 @@ class TownViewData {
     
     init(town: Town) {
         self.name = town.name
-        self.weatherStatus = town.weather?.main
-        self.weatherIcon = town.weather?.icon
-        self.temp = "\(town.temp)" 
+        self.weatherStatus = town.status
+        self.weatherIcon = town.icon
+        self.temp = "\(town.temp) °C"
     }
 }

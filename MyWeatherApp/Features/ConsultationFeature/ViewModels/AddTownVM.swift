@@ -32,6 +32,7 @@ class AddTownVM {
     
     var bindResultMessage: ((String) -> ())?
     var bindButtonState: ((Bool) -> ())?
+    var notifyAdd: (() -> ())?
     
     
     func searchTown(_ name: String?) {
@@ -62,12 +63,25 @@ class AddTownVM {
         self.addService.getTownWeather(lat: lat, lon: lon) { result in
             switch result {
             case .success(let value):
-                print("weather is \(value.current?.temp)")
-                break
+                let town = Town(name: self.town?.name ?? "")
+                if let weathers = value.current?.weather, weathers.count > 0 {
+                    town.status = weathers[0]?.main
+                    town.icon = weathers[0]?.icon
+                }
+                town.temp = value.current?.temp ?? 0.0
+                town.pressure = value.current?.pressure ?? 0.0
+                town.visibility = value.current?.visibility ?? 0.0
+                town.humidity = value.current?.humidity ?? 0.0
+                town.windSpeed = value.current?.wind_speed ?? 0.0
+                self.addService.saveTown(town)
+                DispatchQueue.main.async {
+                    self.notifyAdd?()
+                }
             case .failure(_):
                 break
             }
         }
     }
+    
     
 }

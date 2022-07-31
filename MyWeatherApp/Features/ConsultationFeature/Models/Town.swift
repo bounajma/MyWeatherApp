@@ -12,12 +12,13 @@ import MBWeather
 class Town {
    
     let name: String
-    var lat: Double = 0.0
-    var lon: Double = 0.0
+    var status: String?
+    var icon: String?
     var temp: Double = 0.0
-    var weather: WeatherInfo?
-    
-    
+    var pressure: Double = 0.0
+    var humidity: Double = 0.0
+    var visibility: Double = 0.0
+    var windSpeed: Double = 0.0
     
     init(name: String) {
         self.name = name

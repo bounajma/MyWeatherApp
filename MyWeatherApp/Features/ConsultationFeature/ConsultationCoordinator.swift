@@ -33,6 +33,7 @@ class ConsultationCoordinator: NSObject, Coordinator {
     }
     func showAddVC() {
         if let add = self.addTownVC {
+            add.delegate = self
             self.navController.present(add, animated: true)
         }
     }
@@ -40,11 +41,17 @@ class ConsultationCoordinator: NSObject, Coordinator {
 }
 
 // TownsListVCDelegate
-
 extension ConsultationCoordinator: TownsListVCDelegate {
     
     func addTown() {
         showAddVC()
+    }
+}
+
+//
+extension ConsultationCoordinator: AddTownVCDelegate {
+    func updateTownsList() {
+        self.townsVC?.getData()
     }
 }
 

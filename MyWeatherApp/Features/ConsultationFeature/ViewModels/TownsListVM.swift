@@ -22,9 +22,8 @@ class TownsListVM {
     var bindTownsList: (([TownViewData]) -> ())?
     
     func getTownsList() {
-        self.townsService.getTownsList { list in
-            self.townsList = list
-        }
+        let townsList = self.townsService.getSavedTowns()
+        self.townsList = townsList
     }
     
 }
