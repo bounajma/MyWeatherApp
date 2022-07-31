@@ -13,18 +13,14 @@ import CoreData
 class AddTownService {
     
     func searchTownByName(_ name: String, completion: @escaping (Result<[GeoCode], RequestError>) -> ()) {
-        let endpoint = GeoCodeEndpoint(q: name, limit: 1)
-        WeatherAPIManager.sendRequest(endpoint: endpoint, responseModel: [GeoCode].self) { result in
+        SearchTownManager.searchTownByName(name, limit: 1) { result in
             completion(result)
         }
     }
     
     func getTownWeather(lat: Double,lon: Double, completion: @escaping (Result<WeatherResponse, RequestError>) -> ()) {
-        let weatherEndpoint = WeatherEndpoint(lat: lat, lon: lon)
-        WeatherAPIManager.sendRequest(endpoint: weatherEndpoint, responseModel: WeatherResponse.self) { response in
-            
+        SearchWeatherManager.getTownWeather(lat: lat, lon: lon) { response in
             completion(response)
-            
         }
     }
     

@@ -1,5 +1,5 @@
 PODS:
-  - MBWeather (0.5.0)
+  - MBWeather (0.7.0)
 
 DEPENDENCIES:
   - "MBWeather (from `git@github.com:bounajma/MBWeather.git`)"
@@ -10,11 +10,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MBWeather:
-    :commit: fb9c6f492337221565bca7b1e5262656c0daa7aa
+    :commit: 14970863b309e8d928a1c77be3f0ac1aa8560dd0
     :git: "git@github.com:bounajma/MBWeather.git"
 
 SPEC CHECKSUMS:
-  MBWeather: af81d3f331810c0b0278c9449aeb2446069f65f8
+  MBWeather: 35d25fdfae626a9849ed468cab339a50c5e52c78
 
 PODFILE CHECKSUM: 1235be87133a3614a8fc0555c5a7ba148e30d171
 

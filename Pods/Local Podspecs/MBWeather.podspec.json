@@ -5,7 +5,7 @@
   },
   "summary": "MBWeather helps user get weather info by typing just the city name.",
   "requires_arc": true,
-  "version": "0.5.0",
+  "version": "0.7.0",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -16,7 +16,7 @@
   "homepage": "https://github.com/bounajma/MBWeather",
   "source": {
     "git": "git@github.com:bounajma/MBWeather.git",
-    "tag": "0.5.0"
+    "tag": "0.7.0"
   },
   "frameworks": "UIKit",
   "source_files": "MBWeather/**/*.{swift}",

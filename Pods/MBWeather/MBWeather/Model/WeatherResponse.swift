@@ -12,9 +12,6 @@ public class WeatherInfo: Codable {
     public var main: String?
     public var description: String?
     public var icon: String?
-    public init() {
-        
-    }
 }
 
 public class CurrentWeather: Codable {
