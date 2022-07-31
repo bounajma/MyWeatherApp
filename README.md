@@ -10,7 +10,7 @@ The App is basically based on the MVVM Architecture. For binding we just used cl
 
 # Next Step
 
-Imlementing [RxSwift] (https://github.com/ReactiveX/RxSwift).
+Imlementing [RxSwift](https://github.com/ReactiveX/RxSwift).
 
 # How to build
 
@@ -43,4 +43,4 @@ $ open "MyWeatherApp.xcworkspace"
 
 # Libraries
 
-* [MBWeather] (https://github.com/bounajma/MBWeather)
+* [MBWeather](https://github.com/bounajma/MBWeather)
