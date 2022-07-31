@@ -9,6 +9,7 @@ import UIKit
 
 protocol TownsListVCDelegate: NSObjectProtocol {
     func addTown()
+    func showTownDetails(_ index: Int)
 }
 
 class TownsListVC: UIViewController {
@@ -71,5 +72,7 @@ extension TownsListVC: UITableViewDelegate, UITableViewDataSource {
         }
         return TownsListCell()
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.showTownDetails(indexPath.row)
+    }
 }

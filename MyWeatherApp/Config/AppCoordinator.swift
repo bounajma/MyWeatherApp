@@ -27,7 +27,7 @@ class AppCoordinator {
     }
     
     func startConsultation () {
-        
+        //MARK: DependencyInjection
         let vc = TownsListVC()
         let vm = TownsListVM()
         let service = TownsListService()
@@ -43,10 +43,12 @@ class AppCoordinator {
         let addService = AddTownService()
         addVM.addService = addService
         addVC.viewModel = addVM
-        
         self.consultation.addTownService = addService
         self.consultation.addTownVM = addVM
         self.consultation.addTownVC = addVC
+        
+        let detailsVC = DetailsVC()
+        self.consultation.detailsVC = detailsVC
         
         self.consultation.start()
     }

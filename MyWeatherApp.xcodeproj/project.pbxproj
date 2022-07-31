@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5613ECB8F9D30D7F6B2E09E6 /* Pods_MyWeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14949FF1E20CDA86F9AEE05A /* Pods_MyWeatherAppTests.framework */; };
 		86A199C2289600B900F341AE /* MyWeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86A199C0289600B900F341AE /* MyWeatherApp.xcdatamodeld */; };
+		86A199C62896B6A500F341AE /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A199C42896B6A500F341AE /* DetailsVC.swift */; };
+		86A199C72896B6A500F341AE /* DetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86A199C52896B6A500F341AE /* DetailsVC.xib */; };
 		86D4382828959866003F74A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D4382728959866003F74A0 /* AppDelegate.swift */; };
 		86D4383128959867003F74A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86D4383028959867003F74A0 /* Assets.xcassets */; };
 		86D4383428959867003F74A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D4383228959867003F74A0 /* LaunchScreen.storyboard */; };
@@ -60,6 +62,8 @@
 		34EABD5387DC66F61368E8BD /* Pods_MyWeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyWeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D785CD610A9E6740B17EB3 /* Pods-MyWeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWeatherApp.release.xcconfig"; path = "Target Support Files/Pods-MyWeatherApp/Pods-MyWeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		86A199C1289600B900F341AE /* MyWeatherApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyWeatherApp.xcdatamodel; sourceTree = "<group>"; };
+		86A199C42896B6A500F341AE /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		86A199C52896B6A500F341AE /* DetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsVC.xib; sourceTree = "<group>"; };
 		86D4382428959866003F74A0 /* MyWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D4382728959866003F74A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86D4383028959867003F74A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +133,15 @@
 				14949FF1E20CDA86F9AEE05A /* Pods_MyWeatherAppTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		86A199C32896B66500F341AE /* DetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				86A199C42896B6A500F341AE /* DetailsVC.swift */,
+				86A199C52896B6A500F341AE /* DetailsVC.xib */,
+			);
+			path = DetailsVC;
 			sourceTree = "<group>";
 		};
 		86D4381B28959866003F74A0 = {
@@ -277,6 +290,7 @@
 		86D438672895BCBF003F74A0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				86A199C32896B66500F341AE /* DetailsVC */,
 				86D438802895DFBA003F74A0 /* AddTownVC */,
 				86D438682895BCBF003F74A0 /* TownsListVC */,
 			);
@@ -454,6 +468,7 @@
 				86D4386F2895BCBF003F74A0 /* TownsListCell.xib in Resources */,
 				86D4383428959867003F74A0 /* LaunchScreen.storyboard in Resources */,
 				86D4383128959867003F74A0 /* Assets.xcassets in Resources */,
+				86A199C72896B6A500F341AE /* DetailsVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +610,7 @@
 				86D4387D2895D47E003F74A0 /* Coordinator.swift in Sources */,
 				86D438712895BCBF003F74A0 /* TownsListVC.swift in Sources */,
 				86D4386E2895BCBF003F74A0 /* Town.swift in Sources */,
+				86A199C62896B6A500F341AE /* DetailsVC.swift in Sources */,
 				86D4382828959866003F74A0 /* AppDelegate.swift in Sources */,
 				86D438702895BCBF003F74A0 /* TownsListCell.swift in Sources */,
 			);
