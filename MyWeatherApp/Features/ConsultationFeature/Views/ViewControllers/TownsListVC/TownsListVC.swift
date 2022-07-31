@@ -12,7 +12,12 @@ protocol TownsListVCDelegate: NSObjectProtocol {
     func showTownDetails(_ index: Int)
 }
 
-class TownsListVC: UIViewController {
+protocol TownsListView: UIViewController {
+    var delegate: TownsListVCDelegate? { get set }
+    func getData()
+}
+
+class TownsListVC: UIViewController, TownsListView {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,7 +26,6 @@ class TownsListVC: UIViewController {
     
     var viewData = [TownViewData]() {
         didSet {
-            self.stopActivityIndicator()
             self.updateViews()
         }
     }
@@ -47,7 +51,6 @@ class TownsListVC: UIViewController {
         self.tableView.reloadData()
     }
     func getData() {
-        self.startActivityIndicator()
         self.viewModel?.bindTownsList = { [weak self] list in
             self?.viewData = list
         }

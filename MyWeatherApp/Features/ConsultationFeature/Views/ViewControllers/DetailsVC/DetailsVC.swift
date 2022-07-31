@@ -7,7 +7,11 @@
 
 import UIKit
 
-class DetailsVC: UIViewController {
+protocol DetailsView: UIViewController {
+    var town: Town? { get set }
+}
+
+class DetailsVC: UIViewController, DetailsView {
     
     @IBOutlet weak var statusIcon: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!

@@ -14,17 +14,17 @@ class ConsultationCoordinator: NSObject, Coordinator {
     var navController: UINavigationController = UINavigationController()
     
     //MARK: Towns List
-    var townsVC: TownsListVC?
+    var townsVC: TownsListView?
     var townsVM: TownsListVM?
     var townsService: TownsListService?
     
     //MARK: Add town
-    var addTownVC: AddTownVC?
+    var addTownVC: AddTownView?
     var addTownVM: AddTownVM?
     var addTownService: AddTownService?
     
     //MARK: Details
-    var detailsVC: DetailsVC?
+    var detailsVC: DetailsView?
     
     
     func start() {

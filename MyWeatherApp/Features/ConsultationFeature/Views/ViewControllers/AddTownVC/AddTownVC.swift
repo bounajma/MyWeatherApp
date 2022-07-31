@@ -10,8 +10,11 @@ import UIKit
 protocol AddTownVCDelegate: NSObjectProtocol {
     func updateTownsList()
 }
+protocol AddTownView: UIViewController {
+    var delegate: AddTownVCDelegate? { get set }
+}
 
-class AddTownVC: UIViewController {
+class AddTownVC: UIViewController, AddTownView {
 
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!

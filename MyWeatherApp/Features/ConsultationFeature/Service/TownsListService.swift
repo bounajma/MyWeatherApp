@@ -10,13 +10,12 @@ import MBWeather
 import CoreData
 
 
-class TownsListService {
+protocol TownsService {
+    func getSavedTowns() -> [Town]
+}
+
+class TownsListService: TownsService {
     
-    func getTownsList(_ completion: @escaping ([Town]) -> ()) {
-        
-        let towns = [Town]()
-        completion(towns)
-    }
     
     func getSavedTowns() -> [Town] {
         var towns = [Town]()

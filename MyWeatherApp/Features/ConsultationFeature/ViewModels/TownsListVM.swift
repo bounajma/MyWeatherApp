@@ -10,12 +10,11 @@ import Foundation
 
 class TownsListVM {
     
-    var townsService: TownsListService!
-    
-    var townsList: [Town]? {
+    var townsService: TownsService!
+    var townsList: [Town]?
+    var townsViewsData: [TownViewData]? {
         didSet {
-            let viewData = townsList?.map { TownViewData(town: $0) } ?? []
-            bindTownsList?(viewData)
+            bindTownsList?(townsViewsData ?? [])
         }
     }
     
@@ -24,6 +23,7 @@ class TownsListVM {
     func getTownsList() {
         let townsList = self.townsService.getSavedTowns()
         self.townsList = townsList
+        self.townsViewsData = townsList.map { TownViewData(town: $0) }
     }
     
 }
