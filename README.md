@@ -32,7 +32,6 @@ $ pod install
 ```bash
 $ open "MyWeatherApp.xcworkspace"
 ```
-```bash
  
 5) Compile and run the app in your simulator
 
